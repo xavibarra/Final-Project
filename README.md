@@ -28,6 +28,7 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * Definir paleta de colores y tipografía
 * Hacer un "planning" proyecto
 * Implentar HTML y CSS del Sign Up y Sing In
+
 <!-- 
 ### 18 agosto:
 * Implentar HTML y CSS del Sign Up y Sing In
