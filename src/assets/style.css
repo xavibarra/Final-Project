@@ -19,3 +19,113 @@
 /* Home view */
 
 /* Account View */
+
+/* **************************************************************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,900;1,400;1,600;1,700&display=swap');
+/* base = #F4A261 */
+/* base ligth = #FABB87 */
+/* base dark = #BF5D0D */
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h3{
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+/* SING UP */
+/* header sing up */
+.head{
+    width: 40%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.head h3{
+    margin-right: 10px;
+}
+.logo{
+    width: 70px;
+    text-align: center;
+}
+/* Register container */
+.container-first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#F4A261, white)
+}
+.sing{
+    text-align: center;
+    width: 85%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    margin-top: 70px;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15%;
+    background-color: #F4A261;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.input-field{
+    all: unset;
+    width: 90%;
+}
+.button{
+    all:unset;
+    border-radius: 20px;
+    width: 70%;
+    height: 25px;
+    margin-bottom: 15px;
+    background-color: #F4A261;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+}
+.button:hover{
+    background-color: #BF5D0D;
+}
+.header-title{
+    margin: 15px 0;
+}
+.footer-first{
+    margin-bottom: 15px;
+}
+.sign-link{
+    color: #F4A261;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+
+
+/* MEDIA QUERY */
+/* media 992px */
+@media screen and (min-width: 992px){
+    .container-first{
+        flex-direction: row;
+    }
+    .sing{
+        width: 40%;
+        height: 350px;
+        justify-content: center;
+    }
+    .head{
+        justify-content: center;
+    }
+}
