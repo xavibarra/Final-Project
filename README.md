@@ -7,7 +7,6 @@ Fecha: 25/08/2022
 
 ## Descripcion
 
-![Pagina Home](https://i.postimg.cc/m2rV83dV/Captura-de-pantalla-2022-08-25-a-las-10-38-46.png)
 
 Se trata del proyecto final realizado durante el bootcamp de Front End Development en el Ironhack que consiste en una pagina web que te permite gestionar tus tareas.
 
@@ -24,6 +23,12 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 
 ## Seguimiento del proyecto:
 
+### 05 Diciembre:
+* Diseñar pantallas de la web
+* Definir paleta de colores y tipografía
+* Hacer un "planning" proyecto
+* Implentar HTML y CSS del Sign Up y Sing In
+<!-- 
 ### 18 agosto:
 * Implentar HTML y CSS del Sign Up y Sing In
 
@@ -55,4 +60,4 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * Repaso a la pagina y todas sus funcionalidades
 * Preparar el README con la descripcion del proyecto
 * Preparar la presentacion del proyecto
-* Implementar funcionalidad del Timer
+* Implementar funcionalidad del Timer -->
