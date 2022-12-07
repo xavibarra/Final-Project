@@ -8,7 +8,7 @@
     </div>
     <NewTask @emitTask="getTasks"/>
     <h1>Tasks:</h1>
-    <TaskItem @deleteTask="deleteTask" v-for="task in tasks" :key="task.id" :task="task" />
+    <TaskItem @deleteTask="deleteTask" @toogleTask="toogleTask" @getTasks="getTasks" v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 </template>
 
@@ -31,12 +31,15 @@ const getTasks = async() => {
 };
 getTasks();
 
-
-
 const deleteTask = async() => {
   tasks.value = await taskStore.fetchTasks();
 };
 deleteTask();
+
+const toogleTask = async() => {
+  tasks.value = await taskStore.fetchTasks();
+};
+toogleTask();
 
 
 

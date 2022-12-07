@@ -79,6 +79,7 @@ h3{
     border: none;
     background-color: #F4A261;
     cursor: pointer;
+    margin: 40px 0;
 }
 .sing{
     text-align: center;
@@ -153,6 +154,7 @@ h3{
 }
 .frequently-questions{
     width: 80%;
+    margin-top: 40px;
 }
 .frequently-questions h3{
     text-align: center;
@@ -167,9 +169,15 @@ h3{
     margin-bottom: 15px;
 }
 
+
+
+
 #newTask{
     display: none;
 }
+
+
+
 
 /* MEDIA QUERY */
 /* media 992px */
