@@ -3,7 +3,7 @@
     <h3>{{task.title}}</h3>
     <p>{{task.description}}</p>
     <button @click="deleteTask">Delete {{task.title}}</button>
-    <button @click="toogleTask">Toggle {{task.is_complete}} </button>
+    <input type="checkbox" v-model="task.is_complete" @click="toogleTask" />
     
     <div action="#" v-show="!editTask">
         <div class="input-field">

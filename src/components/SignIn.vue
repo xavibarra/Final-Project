@@ -129,22 +129,19 @@ const signIn = async () => {
 };
 
 const mostrar = () => {
-    const x = document.getElementById('signIn');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-};
-const button = () => {
+  console.log("patata");
   const y = document.getElementById('button-signIn');
   const x = document.getElementById('signIn');
-  if (x.style.display !== 'none') {
-    y.style.display = 'none';
-  } else {
-    y.style.display = 'block';
-  }
+  console.log(x.style.display);
+     if (x.style.display === 'block') {
+       x.style.display = 'none';
+       y.style.display = 'block';
+     } else {
+        x.style.display = 'block';
+        y.style.display = 'none';
+    }
 };
+
 
 </script>
 
