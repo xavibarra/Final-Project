@@ -24,10 +24,21 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 ## Seguimiento del proyecto:
 
 ### 05 Diciembre:
+
 * Diseñar pantallas de la web
 * Definir paleta de colores y tipografía
 * Hacer un "planning" proyecto
 * Implentar HTML y CSS del Sign Up y Sing In
+
+### 06 Diciembre:
+
+* Funcionalidad sing in
+* Funcionalidad log out
+* Añadr tareas sin page reload
+* Borrar tareas sin page reload
+* HTML página completa Sing up / Sing In
+* CSS página completa Sing up/ Sing In
+
 
 <!-- 
 ### 18 agosto:
