@@ -1,26 +1,4 @@
-/* :root {
-    --colorWhite: #ffffff;
-    --colorBlack: #000000;
-    --colorRed: red;
-    --fontSize-sm: 16px;
-    --fontFamily: 'Arial, Helvetica, sans-serif';
-    --fontTitle: 'Arial';
-    --fontBody: 'Helvetica';
-} */
 
-/* SignIn Component */
-
-/* h1 {
-    color: var(--colorRed);
-} */
-
-/* SignUp Component */
-
-/* Home view */
-
-/* Account View */
-
-/* **************************************************************************************** */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,900;1,400;1,600;1,700&display=swap');
 /* base = #F4A261 */
 /* base ligth = #FABB87 */
@@ -29,35 +7,78 @@
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 h3{
     font-weight: 600;
     font-size: 1.8rem;
 }
-/* SING UP */
-/* header sing up */
-.head{
-    width: 40%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.head h3{
-    margin-right: 10px;
-}
-.logo{
-    width: 70px;
-    text-align: center;
-}
-/* Register container */
-.container-first{
+
+/* SIGN UP / SIGN IN */
+.first-page{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+}
+
+/* nav signIn/signUp */
+.nav-sign{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4A261;
+    height: 50px;
+}
+.fixed-nav{
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(#F4A261, white)
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+.nav-sign h1{
+    margin-left: 20px;
+}
+.logo-sign{
+    width: 35px;
+    margin: 0 15px;
+}
+/* body */
+.part1-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.part2-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.part3-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* image sign*/
+.img-sign{
+    margin-top: 70px;
+}
+/* title sign */
+.title-sign{
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+#signIn{
+    display: none;
+}
+.button-signIn{
+    height: 50px;
+    width: 150px;
+    border-radius: 40px;
+    border: none;
+    background-color: #F4A261;
+    cursor: pointer;
 }
 .sing{
     text-align: center;
@@ -66,14 +87,14 @@ h3{
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    margin-top: 70px;
+    background-color: #F4A261;
+    margin-top: 40px;
 }
 .form-input{
     display: flex;
     flex-direction: column;
     margin: 20px 15%;
-    background-color: #F4A261;
+    background-color: white;
     height: 25px;
     border-radius: 20px;
     border: none;
@@ -92,12 +113,15 @@ h3{
     width: 70%;
     height: 25px;
     margin-bottom: 15px;
-    background-color: #F4A261;
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: white;
+    color: #F4A261;
+    font-weight: 400;
 }
 .button:hover{
     background-color: #BF5D0D;
+    color: white;
+    cursor: pointer;
 }
 .header-title{
     margin: 15px 0;
@@ -106,26 +130,108 @@ h3{
     margin-bottom: 15px;
 }
 .sign-link{
-    color: #F4A261;
+    color: white;
     font-weight: 500;
     text-decoration: none;
 }
+/* singn description */
+.sign-description{
+    text-align: center;
+    font-weight: 500;
+    max-width: 70%;
+    margin-left: 15%;
+    margin-top: 20px;
+    align-self: center;
+}
+.line-sign{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+    height: 1px;
+    border: none;
+    background-color: #F4A261;
+}
+.frequently-questions{
+    width: 80%;
+}
+.frequently-questions h3{
+    text-align: center;
+    margin: 20px 0;
+}
 
+.question{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.answer{
+    margin-bottom: 15px;
+}
 
-
+#newTask{
+    display: none;
+}
 
 /* MEDIA QUERY */
 /* media 992px */
 @media screen and (min-width: 992px){
-    .container-first{
-        flex-direction: row;
-    }
-    .sing{
-        width: 40%;
-        height: 350px;
-        justify-content: center;
-    }
-    .head{
-        justify-content: center;
-    }
+
+   #signIn{
+    display: block;
+   }
+   #button-signIn{
+    display: none;
+   }
+  .sing{
+    width: 70%;
+    justify-content: center;
+  }
+  .form-input{
+    height: 40px;
+  }
+  .button{
+    height: 40px;
+  }
+  .header-subtitle{
+    font-size: 1.3rem;
+  }
+  .footer-first{
+    font-size: 1.3rem;
+  }
+  .sign-description{
+    font-size: 1.3rem;
+  }
+  .frequently-questions h3{
+    font-size: 2.1rem;
+    text-align: left;
+  }
+  .questions{
+    width: 70%;
+  }
+  .question{
+    font-size: 1.8rem;
+  }
+  .answer{
+    font-size: 1.3rem;
+  }
+  .first-page{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.2fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .line-sign{
+    display: none;
+  }
+  .part1-sign{
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .part2-sign{
+    grid-area: 2 / 1 / 3 / 2;
+
+  }
+  .part3-sign{
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
 }

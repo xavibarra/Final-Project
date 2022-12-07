@@ -1,67 +1,101 @@
 <template>
-  <div class="container-first">
-    <div class="head">
-      <h3>ToDo</h3>
-      <img class="logo" src="../../img/logo.png">
-    </div> 
-    <div class="sing">
+  <!-- nav-bar signIn/ signUp -->
+  <section class="fixed-nav">
+    <div class="nav-sign">
+      <h1>ToDo</h1> 
+      <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo">
+      
+    </div>
+  </section>
+  <div class="first-page">
+    <div class="part1-sign">
+      <div>
+        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba">
+      </div>
+      <div>
+        <h1 class="title-sign">ToDo</h1>
+      </div> 
+    </div>      
+    <!-- Iniciar sesión section -->
+    <div class="part2-sign">
+      <div class="sing">
+        <div class="header">
+          <div class="header-description">
+            <h3 class="header-title">Register</h3>
+            <p class="header-subtitle">Start organizing your tasks!</p>
+          </div>
+        </div>
 
-      <div class="header">
-        <div class="header-description">
-          <h3 class="header-title">Register</h3>
-          <p class="header-subtitle">Start organizing your tasks!</p>
+        <form @submit.prevent="signIp">
+          <div>
+            <div class="form-input">
+              <input
+                type="email"
+                class="input-field"
+                placeholder="Enter your email"
+                id="email"
+                v-model="email"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-input">
+              <input
+                type="password"
+                class="input-field"
+                placeholder="Password"
+                id="password"
+                v-model="password"
+                required
+              />
+            </div>
+            <div class="form-input">
+              <input
+                type="password"
+                class="input-field"
+                placeholder="Confirm password"
+                id="confirmPassword"
+                v-model="confirmPassword"
+                required
+              />
+            </div>
+            <button class="button" type="submit">Sign Up</button>
+            <p class="footer-first">
+              Have an account?
+              <PersonalRouter
+                :route="route"
+                :buttonText="buttonText"
+                class="sign-link"
+              />
+            </p>
+          </div>
+        </form>
+
+        <div v-show="errorMsg">{{errorMsg}}</div>
+      </div>
+      <div>
+        <h2 class="sign-description">
+          Create, organize, delete and edit your tasks like never before with ToDo!
+        </h2>
+        <hr class="line-sign"/>
+      </div>
+    </div>  
+    <div class="part3-sign">  
+      <div class="frequently-questions">
+        <h3>Frequently asked questions</h3>
+        <div class="questions">
+          <p class="question">What is ToDo and how does it works?</p>
+          <p class="answer">ToDo is an application for you to create, organize, edit and delete your tasks, with this application you can do everything you want.</p>
+          <p class="question">Can I check my tasks from anywhere?</p>
+          <p class="answer">Yes, once you have created your user you can access it from anywhere in the world to check your tasks</p>
+          <p class="question">Once the task is done, can I check it?</p>
+          <p class="answer">Yes! You can create, edit, delete and check your tasks whenever you want</p>
+          <p class="question">Is it free forever?</p>
+          <p class="answer">Of course! This page has been created for academic purposes and is totally free.</p>
         </div>
       </div>
-
-      <form @submit.prevent="signUp">
-        <div>
-          <div class="form-input">
-            <input
-              type="email"
-              class="input-field"
-              placeholder="Enter your email"
-              id="email"
-              v-model="email"
-              required
-              autocomplete="off"
-            />
-          </div>
-          <div class="form-input">
-            <input
-              type="password"
-              class="input-field"
-              placeholder="Password"
-              id="password"
-              v-model="password"
-              required
-            />
-          </div>
-          <div class="form-input">
-            <input
-              type="password"
-              class="input-field"
-              placeholder="Confirm password"
-              id="confirmPassword"
-              v-model="confirmPassword"
-              required
-            />
-          </div>
-          <button class="button" type="submit">Sign Up</button>
-          <p class="footer-first">
-            Have an account?
-            <PersonalRouter
-              :route="route"
-              :buttonText="buttonText"
-              class="sign-link"
-            />
-          </p>
-        </div>
-      </form>
-
-      <div v-show="errorMsg">{{errorMsg}}</div>
-    </div>
+    </div>  
   </div>
-  
 </template>
 
 <script setup>

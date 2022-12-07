@@ -1,16 +1,19 @@
 <template>
-    <h1>Add a new Task</h1>
-    <div v-if="showErrorMessage">
-        <p class="error-text">{{ errorMessage }}</p>
-    </div>
-    <div>
-        <div class="input-field">
-            <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+    <button @click="mostrar">New task</button>
+    <div id="newTask">
+        <h1>Add a new Task</h1>
+        <div v-if="showErrorMessage">
+            <p class="error-text">{{ errorMessage }}</p>
         </div>
-        <div class="input-field">
-            <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+        <div>
+            <div class="input-newTitleTask">
+                <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+            </div>
+            <div class="input-newDescriptionTask">
+                <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+            </div>
+            <button @click="addTask" class="button">Add</button>
         </div>
-        <button @click="addTask" class="button">Add</button>
     </div>
 </template>
 
@@ -29,9 +32,9 @@ const showErrorMessage = ref(false);
 
 // const constant to save a variable that holds the value of the error message
 const errorMessage = ref(null);
-
+const emit = defineEmits(["emitTask"]);
 // Arrow function para crear tareas.
-const addTask = () => {
+const addTask = async() => {
 if(name.value.length === 0 || description.value.length === 0){
     // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
 
@@ -42,12 +45,23 @@ if(name.value.length === 0 || description.value.length === 0){
     }, 5000);
 
 } else {
+    
     // Aquí mandamos los valores a la store para crear la nueva Task. Esta parte de la función tenéis que refactorizarla para que funcione con emit y el addTask del store se llame desde Home.vue.
 
-    taskStore.addTask(name.value, description.value);
+    await taskStore.addTask(name.value, description.value);
     name.value = '';
     description.value = '';
+    emit("emitTask")
 }
+};
+
+const mostrar = () => {
+    const x = document.getElementById('newTask');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
 };
 
 </script>

@@ -1,58 +1,92 @@
 <!-- COMPONENTE BOILERPLATE -->
  
 <template>
-
-  <div class="container-first">
-    <div class="head">
-      <h3>ToDo</h3>
-      <img class="logo" src="../../img/logo.png">
+  <!-- nav-bar signIn/ signUp -->
+  <section class="fixed-nav">
+    <div class="nav-sign">
+      <h1>ToDo</h1> 
+      <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo">
+      
     </div>
-    <div class="sing">
+  </section>
+  <div class="first-page">
+    <div class="part1-sign">
+      <div>
+        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba">
+      </div>
+      <div>
+        <h1 class="title-sign">ToDo</h1>
+      </div>
+    </div>    
+    <!-- Iniciar sesión section -->
+    <div class="part2-sign">
+      <button id="button-signIn" class="button-signIn" @click="mostrar">Sign In</button>
+      <div id="signIn" class="sing">
+        <div class="header">
+          <div class="header-description">
+            <h3 class="header-title">Sign In</h3>
+            <p class="header-subtitle">Enter to organize your tasks!  </p>
+          </div>
+        </div>
 
-      <div class="header">
-        <div class="header-description">
-          <h3 class="header-title">Sign In</h3>
-          <p class="header-subtitle">Enter to organize your tasks!  </p>
+        <form @submit.prevent="signIp">
+          <div>
+            <div class="form-input">
+              <input
+                type="email"
+                class="input-field"
+                placeholder="Enter your email"
+                id="email"
+                v-model="email"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-input">
+              <input
+                type="password"
+                class="input-field"
+                placeholder="Password"
+                id="password"
+                v-model="password"
+                required
+              />
+            </div>
+            <button class="button" type="submit">Sign In</button>
+            <p class="footer-first">Dont have an account? 
+              <PersonalRouter 
+              :route="route" 
+              :buttonText="buttonText" 
+              class="sign-link"/>
+            </p>
+          </div>
+        </form>
+
+        <div v-show="errorMsg">{{errorMsg}}</div>
+      </div>
+      <div>
+        <h2 class="sign-description">
+          Create, organize, delete and edit your tasks like never before with ToDo!
+        </h2>
+        <hr class="line-sign"/>
+      </div>
+    </div>
+    <div class="part3-sign">  
+      <div class="frequently-questions">
+        <h3>Frequently asked questions</h3>
+        <div class="questions">
+          <p class="question">What is ToDo and how does it works?</p>
+          <p class="answer">ToDo is an application for you to create, organize, edit and delete your tasks, with this application you can do everything you want.</p>
+          <p class="question">Can I check my tasks from anywhere?</p>
+          <p class="answer">Yes, once you have created your user you can access it from anywhere in the world to check your tasks</p>
+          <p class="question">Once the task is done, can I check it?</p>
+          <p class="answer">Yes! You can create, edit, delete and check your tasks whenever you want</p>
+          <p class="question">Is it free forever?</p>
+          <p class="answer">Of course! This page has been created for academic purposes and is totally free.</p>
         </div>
       </div>
-
-      <form @submit.prevent="signUp">
-        <div>
-          <div class="form-input">
-            <input
-              type="email"
-              class="input-field"
-              placeholder="Enter your email"
-              id="email"
-              v-model="email"
-              required
-              autocomplete="off"
-            />
-          </div>
-          <div class="form-input">
-            <input
-              type="password"
-              class="input-field"
-              placeholder="Password"
-              id="password"
-              v-model="password"
-              required
-            />
-          </div>
-          <button class="button" type="submit">Sign Up</button>
-          <p class="footer-first">Dont have an account? 
-            <PersonalRouter 
-            :route="route" 
-            :buttonText="buttonText" 
-            class="sign-link"/>
-          </p>
-        </div>
-      </form>
-
-      <div v-show="errorMsg">{{errorMsg}}</div>
     </div>
   </div>
-
 </template>
 
 <script setup>
@@ -67,10 +101,51 @@ import { storeToRefs } from "pinia";
 const route = "/auth/signup";
 const buttonText = "Sign Up";
 
+// Input Fields
+const email = ref("");
+const password = ref("");
+
+// Error Message
+const errorMsg = ref("");
+// Router to push user once SignedUp to Log In
+const redirect = useRouter();
 // Arrow function to Signin user to supaBase
-const signIn = async () => {
-  try {} catch (error) {}
+
+const signIp = async () => {
+  try {
+    // calls the user store and send the users info to backend to logIn
+    await useUserStore().signIn(email.value, password.value);
+    // redirects user to the homeView
+    redirect.push({ path: "/" });
+  } catch (error) {
+    // displays error message
+    errorMsg.value = error.message;
+    // hides error message
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+  return;
 };
+
+const mostrar = () => {
+    const x = document.getElementById('signIn');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+};
+const button = () => {
+  const y = document.getElementById('button-signIn');
+  const x = document.getElementById('signIn');
+  if (x.style.display !== 'none') {
+    y.style.display = 'none';
+  } else {
+    y.style.display = 'block';
+  }
+};
+
 </script>
 
 <style></style>

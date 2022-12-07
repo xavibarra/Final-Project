@@ -29,7 +29,8 @@
 </template>
 
 <script setup>
-// import PersonalRouter from "./PersonalRouter.vue";
+
+import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
@@ -38,6 +39,9 @@ import { ref } from 'vue';
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
+
+// Error Message
+const errorMsg = ref("");
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
 // const getUser = computed(() => useUserStore().user);
@@ -49,11 +53,22 @@ const userEmail = getUser.email;
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 
+
 const signOut = async () => {
   try{
-    // call the user store and send the users info to backend to signOut
-    // then redirect user to the homeView
-  } catch (error) {}
+    // calls the user store and send the users info to backend to logIn
+    await useUserStore().signOut();
+    // redirects user to the singin
+    redirect.push({ path: "/auth/login" });
+  } catch (error) {
+    // displays error message
+    errorMsg.value = error.message;
+    // hides error message
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+  return;
 };
 
 </script>
