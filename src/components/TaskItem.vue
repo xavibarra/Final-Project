@@ -7,14 +7,14 @@
     
     <div action="#" v-show="!editTask">
         <div class="input-field">
-            <input type="text" placeholder="Title" v-model="name">
+            <input type="text" v-model="name">
         </div>
         <div class="input-field">
-            <input type="text" placeholder="Description" v-model="description">
+            <input type="text" v-model="description">
         </div>
         <button @click="updateTask">Save</button>
     </div>
-    <button @click="(editTask = !editTask)" >Edit</button>
+    <button @click="editTask1">Edit</button>
 </div>
 </template>
 
@@ -28,6 +28,9 @@ const description = ref(props.task.description);
 
 const taskStore = useTaskStore();
 
+const editTask1 = () => {
+    editTask.value = !editTask.value
+}
 const props = defineProps({
     task: Object,
 });
@@ -36,6 +39,7 @@ const emit = defineEmits(["deleteTask", "toogleTask", "getTasks"]);
 
 const editTask = ref(true);
 const updateTask = async () => {
+    editTask1()
     await taskStore.refreshTask(name.value, description.value, props.task.id);
     emit("getTasks")
 };

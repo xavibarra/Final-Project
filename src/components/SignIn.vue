@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <form @submit.prevent="signIp">
+        <form @submit.prevent="signIn">
           <div>
             <div class="form-input">
               <input
@@ -111,7 +111,7 @@ const errorMsg = ref("");
 const redirect = useRouter();
 // Arrow function to Signin user to supaBase
 
-const signIp = async () => {
+const signIn = async () => {
   try {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);

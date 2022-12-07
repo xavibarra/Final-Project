@@ -26,7 +26,7 @@
           </div>
         </div>
 
-        <form @submit.prevent="signIp">
+        <form @submit.prevent="signUp">
           <div>
             <div class="form-input">
               <input
