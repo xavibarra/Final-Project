@@ -129,7 +129,6 @@ const signIn = async () => {
 };
 
 const mostrar = () => {
-  console.log("patata");
   const y = document.getElementById('button-signIn');
   const x = document.getElementById('signIn');
   console.log(x.style.display);
