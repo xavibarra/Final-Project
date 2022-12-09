@@ -211,7 +211,7 @@ h3{
   margin: 15px;
   background-color: white;
   height: 25px;
-  width: 170%;
+  width: 130%;
   border-radius: 20px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -223,14 +223,14 @@ h3{
   width: 90%;
 }
 .button-addNewTask-container{
-  width: 170%;
+  width: 130%;
   display: flex;
 }
 .button-addNewTask{
   all:unset;
   border-radius: 20px;
   height: 25px;
-  width: 170%;
+  width: 100%;
   margin: 15px 0px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
