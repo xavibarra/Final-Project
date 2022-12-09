@@ -1,18 +1,25 @@
 <template>
-    <button @click="mostrar">New task</button>
+    <div class="div-button-newTask">
+        <button @click="mostrar" class="button-newTask">Add a new task</button>
+        <p>Start organizing your tasks now!</p>
+    </div>
     <div id="newTask">
-        <h1>Add a new Task</h1>
-        <div v-if="showErrorMessage">
-            <p class="error-text">{{ errorMessage }}</p>
-        </div>
-        <div>
-            <div class="input-newTitleTask">
-                <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+        <div class="addNewTask">
+            <h1 class="addNewTask-title">Add a new Task</h1>
+            <div v-if="showErrorMessage">
+                <p class="error-text">{{ errorMessage }}</p>
             </div>
-            <div class="input-newDescriptionTask">
-                <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+            <div class="newTask-container">
+                <div class="newTask">
+                    <input type="text" class="addNewTask-input" placeholder="Task Title" v-model="name">
+                </div>
+                <div class="newTask">
+                    <input type="text" class="addNewTask-input" placeholder="Task Description" v-model="description">
+                </div>
+                <div class="button-addNewTask-container"> 
+                    <button class="button-addNewTask" @click="addTask">Add</button>
+                </div>
             </div>
-            <button @click="addTask" class="button">Add</button>
         </div>
     </div>
 </template>

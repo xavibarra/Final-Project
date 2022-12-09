@@ -2,20 +2,19 @@
   <!-- nav-bar signIn/ signUp -->
   <section class="fixed-nav">
     <div class="nav-sign">
-      <h1>ToDo</h1> 
-      <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo">
-      
+      <h1>ToDo</h1>
+      <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo" />
     </div>
   </section>
   <div class="first-page">
     <div class="part1-sign">
       <div>
-        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba">
+        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba" />
       </div>
       <div>
         <h1 class="title-sign">ToDo</h1>
-      </div> 
-    </div>      
+      </div>
+    </div>
     <!-- Iniciar sesión section -->
     <div class="part2-sign">
       <div class="sing">
@@ -71,30 +70,43 @@
           </div>
         </form>
 
-        <div v-show="errorMsg">{{errorMsg}}</div>
+        <div v-show="errorMsg">{{ errorMsg }}</div>
       </div>
       <div>
         <h2 class="sign-description">
-          Create, organize, delete and edit your tasks like never before with ToDo!
+          Create, organize, delete and edit your tasks like never before with
+          ToDo!
         </h2>
-        <hr class="line-sign"/>
+        <hr class="line-sign" />
       </div>
-    </div>  
-    <div class="part3-sign">  
+    </div>
+    <div class="part3-sign">
       <div class="frequently-questions">
         <h3>Frequently asked questions</h3>
         <div class="questions">
           <p class="question">What is ToDo and how does it works?</p>
-          <p class="answer">ToDo is an application for you to create, organize, edit and delete your tasks, with this application you can do everything you want.</p>
+          <p class="answer">
+            ToDo is an application for you to create, organize, edit and delete
+            your tasks, with this application you can do everything you want.
+          </p>
           <p class="question">Can I check my tasks from anywhere?</p>
-          <p class="answer">Yes, once you have created your user you can access it from anywhere in the world to check your tasks</p>
+          <p class="answer">
+            Yes, once you have created your user you can access it from anywhere
+            in the world to check your tasks
+          </p>
           <p class="question">Once the task is done, can I check it?</p>
-          <p class="answer">Yes! You can create, edit, delete and check your tasks whenever you want</p>
+          <p class="answer">
+            Yes! You can create, edit, delete and check your tasks whenever you
+            want
+          </p>
           <p class="question">Is it free forever?</p>
-          <p class="answer">Of course! This page has been created for academic purposes and is totally free.</p>
+          <p class="answer">
+            Of course! This page has been created for academic purposes and is
+            totally free.
+          </p>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </template>
 
