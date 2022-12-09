@@ -1,6 +1,6 @@
 <template>
     <div class="div-button-newTask">
-        <button @click="mostrar" class="button-newTask">Add a new task</button>
+        <button  id="botonOn" @click="mostrar"  class="button-newTask">Add a new task</button>
         <p>Start organizing your tasks now!</p>
     </div>
     <div id="newTask">
@@ -69,6 +69,12 @@ const mostrar = () => {
     } else {
         x.style.display = 'block';
     }
+};
+const FbotonOn = () => {
+    const uno = document.getElementById('botonOn');
+    if (uno.innerHTML == 'Add a new task')
+        uno.innerHTML = 'Close';
+    else uno.innerHTML = 'Add a new task';
 };
 
 </script>
