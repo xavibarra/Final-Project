@@ -1,7 +1,7 @@
 <template>
   <Nav/>
   <h1>Name: {{username}}</h1>
-  <img
+  <img class="avatar"
     :src="
       avatar_url
         ? avatar_url
@@ -39,20 +39,18 @@ const profile = ref({
 });
 const username = ref(null);
 const avatar_url = ref(null);
+const user_id = ref(null);
 
 // PREFILE
 const getProfile = async () => {
   await userStore.fetchUser();
   profile.value = userStore.profile;
   username.value = profile.value.username;
+  console.log(profile);
   avatar_url.value = profile.value.avatar_url;
+  user_id.value = profile.value.user_id;
 };
 getProfile();
-
-onMounted(() => {
-  //getProfile();
-});
-
 
 //Editar Perfil
 let editPerfil = ref(false);
@@ -61,12 +59,23 @@ const changeEditPerfil = () => {
 };
 
 
+const changePerfil = async () => {
+  changeEditPerfil();
+  await userStore.changeProfiles(
+    username.value,
+    avatar_url.value,
+    user_id.value
+  );
+};
+
+
 
 </script>
 
 <style>
-img {
-  width: 200px;
+.avatar {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 </style> 

@@ -14,6 +14,7 @@ h3{
     font-size: 1.8rem;
 }
 
+
 /* SIGN UP / SIGN IN */
 .first-page{
     display: flex;
@@ -43,6 +44,7 @@ h3{
 .logo-sign{
     width: 35px;
     margin: 0 15px;
+    border-radius: 50%;
 }
 /* body */
 .part1-sign{
@@ -63,6 +65,8 @@ h3{
 /* image sign*/
 .img-sign{
     margin-top: 70px;
+    width: 100px;
+    border-radius: 50%;
 }
 /* title sign */
 .title-sign{

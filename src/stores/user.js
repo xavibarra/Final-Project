@@ -9,6 +9,7 @@ export const useUserStore = defineStore("user", {
     async fetchUser() {
       const user = await supabase.auth.user();
       if (user) {
+        console.log(this.user);
         this.user = user;
         const { data: profile } = await supabase
           .from("profile")
@@ -22,24 +23,7 @@ export const useUserStore = defineStore("user", {
         console.log("profile in store: ", this.profile);
       }
     },
-    /*
-    async fetchUser() {
-      const user = await supabase.auth.user();
-      if (user) {
-        this.user = user;
-        const { data: profile } = await supabase
-          .from("profile")
-          .select("*")
-          .eq("user_id", this.user.id);
-          // .match({ user_id: this.user.id });
-        console.log(this.user.id);
-        console.log(profile);
-        if (profile) {
-          this.profile = profile;
-        };
-      };
-    },
-*/
+
     async signUp(email, password) {
       const { user, error } = await supabase.auth.signUp({
         email: email,
@@ -48,7 +32,7 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        const { data: profile } = await supabase.from("profiles").insert([
+        const { data: profile } = await supabase.from("profile").insert([
           {
             user_id: this.user.id,
             email: email,
@@ -82,7 +66,25 @@ export const useUserStore = defineStore("user", {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
     },
+    // Prefil Editar
+    async changeProfiles(username, avatar_url, id) {
+      console.log(username + " " + avatar_url + " " + id);
+      const { data, error } = await supabase
+        .from("profile")
+        .update({
+          username: username,
+          avatar_url: avatar_url,
+        })
+        .match({
+          user_id: id,
+        });
+    },
+
+
+
+    // ==============================FIN DEL ACTIONS
   },
+  
 
   persist: {
     enabled: true,

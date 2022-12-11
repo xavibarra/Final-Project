@@ -63,6 +63,7 @@ if(name.value.length === 0 || description.value.length === 0){
 };
 
 const mostrar = () => {
+    FbotonOn()
     const x = document.getElementById('newTask');
     if (x.style.display === 'block') {
         x.style.display = 'none';
@@ -72,9 +73,15 @@ const mostrar = () => {
 };
 const FbotonOn = () => {
     const uno = document.getElementById('botonOn');
-    if (uno.innerHTML == 'Add a new task')
+    const dos= document.query
+    if (uno.innerHTML == 'Add a new task') {
         uno.innerHTML = 'Close';
-    else uno.innerHTML = 'Add a new task';
+        uno.style.background = '#BF5D0D';
+    }
+    else {
+        uno.innerHTML = 'Add a new task';
+        uno.style.background = '#F4A261';
+    }
 };
 
 </script>
