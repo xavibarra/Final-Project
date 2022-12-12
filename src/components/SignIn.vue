@@ -71,7 +71,10 @@
         <hr class="line-sign"/>
       </div>
     </div>
-    <div class="part3-sign">  
+    <div class="part3-sign">
+      <img class="mockup" src="../../img/realistic_laptop_with_smartphone.jpg" alt="">
+    </div>
+    <div class="part4-sign">  
       <div class="frequently-questions">
         <h3>Frequently asked questions</h3>
         <div class="questions">
