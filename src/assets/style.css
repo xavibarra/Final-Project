@@ -46,7 +46,59 @@ h3{
     margin: 0 15px;
     border-radius: 50%;
 }
-/* body */
+/* nav-bar */
+.navbar{
+  background-color: #F4A261;
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .hamburger-menu{
+  width: 20%;
+} */
+.hamburgerButton{
+  all: unset;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.singOut{
+  margin-right: 15px;
+}
+
+.navbar-logo{
+  display: flex;
+  flex-direction: row;
+}
+.logoutImage{
+  width: 30px;
+  height: 30px;
+}
+.logout-button{
+  all: unset;
+  cursor: pointer;
+}
+.hamburgerContent{
+  background-color: #f9cea894;
+  box-shadow: rgba(250, 187, 135, 0.5) 0px 4px 12px;
+  padding: 10px; 
+  text-align: center;
+}
+.hamburgerLink{
+  all: unset;
+  cursor: pointer;
+  margin-bottom: 150px;
+  color:black;
+}
+.hamburgerLink:hover{
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 12px black;
+}
+
+
+/* body sing*/
 .part1-sign{
     display: flex;
     flex-direction: column;
@@ -355,6 +407,9 @@ h3{
   background-color: #BF5D0D;
   color: white;
 }
+
+/* PROFILE */
+
 /* MEDIA QUERY */
 /* media 992px */
 @media screen and (min-width: 992px){
@@ -400,7 +455,6 @@ h3{
   .first-page{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 0.2fr repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
@@ -418,7 +472,10 @@ h3{
   }
   .part4-sign{
     grid-area: 3 / 1 / 4 / 3;
-
+    width: 70%;
+  }
+  .img-sign{
+    width: 300px;
   }
 
 }

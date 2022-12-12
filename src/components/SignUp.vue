@@ -9,7 +9,7 @@
   <div class="first-page">
     <div class="part1-sign">
       <div>
-        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba" />
+        <img class="img-sign" src="../../img/gif.gif" alt="tasks-gif" />
       </div>
       <div>
         <h1 class="title-sign">ToDo</h1>
@@ -81,6 +81,9 @@
       </div>
     </div>
     <div class="part3-sign">
+      <img class="mockup" src="../../img/realistic_laptop_with_smartphone.jpg" alt="">
+    </div>
+    <div class="part4-sign">
       <div class="frequently-questions">
         <h3>Frequently asked questions</h3>
         <div class="questions">

@@ -6,13 +6,12 @@
     <div class="nav-sign">
       <h1>ToDo</h1> 
       <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo">
-      
     </div>
   </section>
   <div class="first-page">
     <div class="part1-sign">
       <div>
-        <img class="img-sign" src="../../img/gif.gif" alt="prueba">
+        <img class="img-sign" src="../../img/gif.gif" alt="tasks-gif">
       </div>
       <div>
         <h1 class="title-sign">ToDo</h1>

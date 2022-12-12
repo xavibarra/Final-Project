@@ -13,7 +13,7 @@
             <p>{{task.description}}</p>
             <div action="#" v-show="!editTask" class="saveChange">
                 <div class="editText editText-description">
-                    <input class="editText-input" type="text" v-model="description">
+                    <input class="editText-input" type="text" v-model="description" placeholder="Description">
                 </div>
                 <div class="div-update">
                     <button @click="updateTask" class="buttonUpdate">Save changes</button>
@@ -59,7 +59,7 @@ const deleteTask = async() => {
 };
 
 const toogleTask = async () => {
-    await taskStore.toogleTask(props.task.id);
+    await taskStore.toogleTask(props.task.id, props.task.is_complete);
     emit("toogleTask")
 };
 

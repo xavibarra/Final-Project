@@ -1,31 +1,28 @@
 <template>
-  <nav>
-    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <router-link to="/">
-      Home
-    </router-link>
-
-    <ul>
-        <li>
-          <router-link to="/">Task Manager</router-link>
-        </li>
-
-        <li>
-          <router-link to="/account">Your Account</router-link>
-        </li>
-    </ul>
-
+  <nav class="navbar">
     <div>
-      <ul>
-        <li class="log-out-welcome">
-          <p>Welcome, user</p>
-        </li>
-        <li>
-          <button @click="signOut" class="button">Log out</button>
-        </li>
-      </ul>
+      <button @click="hamburgerMenuChange" class="hamburgerButton">☰</button>
+    </div>
+    <div class="navbar-logo">
+      <h1>ToDo</h1> 
+      <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo">
+    </div>
+    <div class="singOut">
+      <button @click="signOut" class="logout-button"><img class="logoutImage" src="../../img/logout.png" alt="logout-icon"></button>
     </div>
   </nav>
+  <div class="hamburgerContent" v-show="hamburgerMenu">
+    <ul>
+      <li>
+        <router-link class="hamburgerLink" to="/">
+          Home
+        </router-link>
+      </li>
+      <li>
+          <router-link class="hamburgerLink" to="/account">Your Account</router-link>
+        </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
@@ -35,6 +32,7 @@ import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { ref } from 'vue';
+
 
 //constant to save a variable that will hold the use router method
 const route = "/";
@@ -70,27 +68,11 @@ const signOut = async () => {
   }
   return;
 };
+let hamburgerMenu = ref(false);
+const hamburgerMenuChange = () => {
+  hamburgerMenu.value = !hamburgerMenu.value;
+};
 
 </script>
 
-<style>
-.navbar-img {
-  width: 90px;
-}
-
-nav {
-  background-color: lightgray;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  padding-inline-start: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style></style>

@@ -49,6 +49,7 @@ const getProfile = async () => {
   console.log(profile);
   avatar_url.value = profile.value.avatar_url;
   user_id.value = profile.value.user_id;
+
 };
 getProfile();
 
