@@ -1,20 +1,29 @@
 <template>
 <div class="container">
-    <h3>{{task.title}}</h3>
-    <p>{{task.description}}</p>
-    <button @click="deleteTask">Delete {{task.title}}</button>
-    <input type="checkbox" v-model="task.is_complete" @click="toogleTask" />
-    
-    <div action="#" v-show="!editTask">
-        <div class="input-field">
-            <input type="text" v-model="name">
+        <div class="divCheckbox">
+            <input type="checkbox" v-model="task.is_complete" @click="toogleTask"/>
         </div>
-        <div class="input-field">
-            <input type="text" v-model="description">
+        <div class="task-text">
+            <h3>{{task.title}}</h3>
+            <div action="#" v-show="!editTask" class="saveChange">
+                <div class="editText">
+                    <input class="editText-input" type="text" v-model="name">
+                </div>
+            </div>
+            <p>{{task.description}}</p>
+            <div action="#" v-show="!editTask" class="saveChange">
+                <div class="editText editText-description">
+                    <input class="editText-input" type="text" v-model="description">
+                </div>
+                <div class="div-update">
+                    <button @click="updateTask" class="buttonUpdate">Save changes</button>
+                </div>
+            </div>
         </div>
-        <button @click="updateTask">Save</button>
-    </div>
-    <button @click="editTask1">Edit</button>
+        <div class="task-buttons">
+            <button class="iconTask background-delate" @click="deleteTask"><img class="iconTaskImg" src="../../img/eliminar.png" alt=""></button>
+            <button class="iconTask background-edit" @click="editTask1"><img class="iconTaskImg" src="../../img/editar.png" alt=""></button>
+        </div>
 </div>
 </template>
 
@@ -53,8 +62,9 @@ const toogleTask = async () => {
     await taskStore.toogleTask(props.task.id);
     emit("toogleTask")
 };
-</script>
 
+
+</script>
 <style></style>
 
 <!--

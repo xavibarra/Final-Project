@@ -65,7 +65,7 @@ h3{
 /* image sign*/
 .img-sign{
     margin-top: 70px;
-    width: 100px;
+    width: 190px;
     border-radius: 50%;
 }
 /* title sign */
@@ -248,7 +248,105 @@ h3{
   cursor: pointer;
 }
 
+/* TASKS */
+.tasksTitle{
+  text-align: center;
+  color: #F4A261;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.container{
+  display: grid;
+  grid-template-columns: 0.1fr repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 3px #F4A261 solid;
+  border-radius: 20px;
+  margin: 0 15px 25px 15px;
+  padding: 10px;
+}
+.divCheckbox{
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+}
+.task-text{
+  grid-area: 1 / 2 / 2 / 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.task-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  grid-area: 1 / 5 / 2 / 6;
+  margin-right: 10px;
+}
+/* Delate task */
+.iconTaskImg{
+  width: 20px;
+}
+.iconTask{
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+}
+.background-delate{
+  background-color:rgba(212, 61, 61, 0.3);
+}
+.background-delate:hover{
+  background-color: rgba(212, 61, 61);
+}
+.background-edit{
+  background-color: rgb(75, 184, 184, 0.3);
+}
+.background-edit:hover{
+  background-color: rgb(75, 184, 184);
+}
+.editText{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+  height: 25px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+.editText-input{
+  border: none;
+  all: unset;
+}
+.saveChange{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.buttonUpdate{
+  all: unset;
+  width: 178%;
+  border-radius: 20px;
+  height: 25px;
+  margin-top: 10px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  color: #F4A261;
+  font-weight: 500;
+  text-align: center;
+}
+.buttonUpdate:hover{
+  background-color: #BF5D0D;
+  color: white;
+}
 /* MEDIA QUERY */
 /* media 992px */
 @media screen and (min-width: 992px){

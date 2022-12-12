@@ -2,7 +2,7 @@
   <div class="wrapper">
     <Nav />
     <NewTask @emitTask="getTasks"/>
-    <h1>Tasks:</h1>
+    <h1 class="tasksTitle">Tasks</h1>
     <TaskItem @deleteTask="deleteTask" @toogleTask="toogleTask" @getTasks="getTasks" v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 </template>

@@ -12,7 +12,7 @@
   <div class="first-page">
     <div class="part1-sign">
       <div>
-        <img class="img-sign" src="../../img/logoHorizontal.png" alt="prueba">
+        <img class="img-sign" src="../../img/gif.gif" alt="prueba">
       </div>
       <div>
         <h1 class="title-sign">ToDo</h1>
