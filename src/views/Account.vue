@@ -1,6 +1,6 @@
 <template>
   <Nav/>
-  <h1>Name: {{username}}</h1>
+  <!-- <h1>Name: {{username}}</h1>
   <img class="avatar"
     :src="
       avatar_url
@@ -8,8 +8,8 @@
         : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
       "
     alt="Profile picture"
-  />
-  <div v-show="editPerfil">
+  /> -->
+  <!-- <div v-show="editPerfil">
     <label for="name">Nombre</label>
     <input type="text" v-model="username" />
     <br>
@@ -17,7 +17,53 @@
     <input type="text" v-model="avatar_url" />
     <button @click="changePerfil">Save</button>
   </div>
-  <button @click="changeEditPerfil">Edit</button>
+  <button @click="changeEditPerfil">Edit</button> -->
+
+
+  <div class="profile">
+    <div class="card">
+        <div class="card_background_img"></div>
+        <div class="card_profile_img">
+          <img class="avatar"
+            :src="
+            avatar_url
+            ? avatar_url
+            : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
+            "
+            alt="Profile picture"
+            />
+        </div>
+        <div class="user_details">
+            <h3>{{username? username : "Enter you username"}}</h3>
+            <div class="containerEdit">
+              <div v-show="editPerfil" class="editProfile">
+                <input type="text" class="editProfile-input" v-model="username" />
+              </div>
+            </div>
+            <div class="containerEdit">
+              <div v-show="editPerfil" class="editProfile">
+                <input type="text" class="editProfile-input" v-model="avatar_url" placeholder="Enter URL avatar"/>
+              </div>
+            </div>
+            <div v-show="editPerfil">
+              <button class="button-changeProfile" @click="changePerfil">Save</button>
+            </div>
+        </div>
+        <div class="card_count">
+            <div class="count">
+                <div class="fans">
+                    <h3>00</h3>
+                    <p>pending tasks</p>
+                </div>
+                <div class="following">
+                    <h3>00</h3>
+                    <p>Tasks done</p>
+                </div>
+            </div>
+            <button @click="changeEditPerfil" class="btn">Edit</button>
+        </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -40,12 +86,14 @@ const profile = ref({
 const username = ref(null);
 const avatar_url = ref(null);
 const user_id = ref(null);
+const name=ref(null)
 
 // PREFILE
 const getProfile = async () => {
   await userStore.fetchUser();
   profile.value = userStore.profile;
   username.value = profile.value.username;
+  name.value = profile.value.name;
   console.log(profile);
   avatar_url.value = profile.value.avatar_url;
   user_id.value = profile.value.user_id;
@@ -65,7 +113,8 @@ const changePerfil = async () => {
   await userStore.changeProfiles(
     username.value,
     avatar_url.value,
-    user_id.value
+    user_id.value,
+    name.value
   );
 };
 
@@ -73,11 +122,4 @@ const changePerfil = async () => {
 
 </script>
 
-<style>
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-</style> 
+<style></style> 

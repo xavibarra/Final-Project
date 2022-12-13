@@ -68,7 +68,8 @@ export const useUserStore = defineStore("user", {
     },
     // Prefil Editar
     async changeProfiles(username, avatar_url, id) {
-      console.log(username + " " + avatar_url + " " + id);
+      console.log(username + " " + avatar_url + " " + id + " ");
+      console.log("hola");
       const { data, error } = await supabase
         .from("profile")
         .update({
