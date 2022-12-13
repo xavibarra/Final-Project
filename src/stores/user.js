@@ -9,7 +9,6 @@ export const useUserStore = defineStore("user", {
     async fetchUser() {
       const user = await supabase.auth.user();
       if (user) {
-        console.log(this.user);
         this.user = user;
         const { data: profile } = await supabase
           .from("profile")
@@ -20,7 +19,6 @@ export const useUserStore = defineStore("user", {
         if (profile) {
           this.profile = profile[0];
         }
-        console.log("profile in store: ", this.profile);
       }
     },
 
@@ -68,8 +66,7 @@ export const useUserStore = defineStore("user", {
     },
     // Prefil Editar
     async changeProfiles(username, avatar_url, id) {
-      console.log(username + " " + avatar_url + " " + id + " ");
-      console.log("hola");
+      console.log(username + " " + avatar_url + " " + id);
       const { data, error } = await supabase
         .from("profile")
         .update({

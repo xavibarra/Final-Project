@@ -55,9 +55,6 @@ h3{
   justify-content: space-between;
   align-items: center;
 }
-/* .hamburger-menu{
-  width: 20%;
-} */
 .hamburgerButton{
   all: unset;
   cursor: pointer;
@@ -83,18 +80,21 @@ h3{
   background-color: #f9cea894;
   box-shadow: rgba(250, 187, 135, 0.5) 0px 4px 12px;
   padding: 10px; 
-  text-align: center;
+  text-align: left;
 }
 .hamburgerLink{
   all: unset;
   cursor: pointer;
-  margin-bottom: 150px;
+  margin-bottom: 550px;
   color:black;
 }
 .hamburgerLink:hover{
   font-size: 1.2rem;
   font-weight: 500;
   text-shadow: 2px 2px 12px black;
+}
+.marginlink{
+  margin-bottom: 5px;
 }
 
 
@@ -326,6 +326,18 @@ h3{
   margin: 0 15px 25px 15px;
   padding: 10px;
 }
+.containerCheck{
+  display: grid;
+  grid-template-columns: 0.1fr repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 3px #F4A261 solid;
+  border-radius: 20px;
+  margin: 0 15px 25px 15px;
+  padding: 10px;
+  background-color: rgba(21, 129, 21, 0.425);
+}
 .divCheckbox{
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -345,6 +357,52 @@ h3{
   grid-area: 1 / 5 / 2 / 6;
   margin-right: 10px;
 }
+/* Tags */
+.tagsContainer{
+  display: flex;
+  flex-direction: row;
+}
+.tags{
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+.tag-input {
+  width: 130%;
+  border: 1px solid #eee;
+  font-size: 0.9em;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  position: inherit;
+}
+
+.tag-input__tag {
+  height: 30px;
+  float: left; 
+  margin-right: 10px;
+  background-color: #eee;
+  margin-top: 10px;
+  line-height: 30px;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.tag-input__tag > span {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.tag-input__text {
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  line-height: 50px;
+  background: none;
+}
+
+
 /* Delate task */
 .iconTaskImg{
   width: 20px;

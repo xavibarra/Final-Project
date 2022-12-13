@@ -13,14 +13,17 @@
   </nav>
   <div class="hamburgerContent" v-show="hamburgerMenu">
     <ul>
-      <li>
+      <li class="marginlink">
         <router-link class="hamburgerLink" to="/">
           Home
         </router-link>
       </li>
-      <li>
+      <li class="marginlink">
           <router-link class="hamburgerLink" to="/account">Your Account</router-link>
-        </li>
+      </li>
+      <li class="marginlink">hola</li>
+      <li class="marginlink">jhgfd</li>
+      <li class="marginlink">gfd</li>
     </ul>
   </div>
 </template>

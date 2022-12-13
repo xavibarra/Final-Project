@@ -1,7 +1,8 @@
 <template>
-<div class="container">
+<div :class="clase">
         <div class="divCheckbox">
-            <input type="checkbox" v-model="task.is_complete" @click="toogleTask"/>
+            <input type="checkbox" v-model="task.is_complete" @click="toogleTask"
+            />
         </div>
         <div class="task-text">
             <h3>{{task.title}}</h3>
@@ -11,6 +12,9 @@
                 </div>
             </div>
             <p>{{task.description}}</p>
+            <div class="tagsContainer">
+                <p class="tags" v-for="tag in task.tag_array" :key="tag">{{tag}}</p>
+            </div>
             <div action="#" v-show="!editTask" class="saveChange">
                 <div class="editText editText-description">
                     <input class="editText-input" type="text" v-model="description" placeholder="Description">
@@ -34,7 +38,7 @@ import { supabase } from '../supabase';
 
 const name = ref(props.task.title);
 const description = ref(props.task.description);
-
+const clase=ref()
 const taskStore = useTaskStore();
 
 const editTask1 = () => {
@@ -57,11 +61,16 @@ const deleteTask = async() => {
     await taskStore.deleteTask(props.task.id);
     emit("deleteTask")
 };
-
+const change = () => {
+    clase.value= props.task.is_complete? "containerCheck" : "container"
+}
+change()
 const toogleTask = async () => {
+    change();
     await taskStore.toogleTask(props.task.id, props.task.is_complete);
     emit("toogleTask")
 };
+
 
 
 </script>
