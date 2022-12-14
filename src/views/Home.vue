@@ -2,8 +2,9 @@
   <div class="wrapper">
     <Nav />
     <NewTask @emitTask="getTasks" />
-    <!-- <input type="text" v-model="input" placeholder="Search fruits..." />
-    <div class="item fruit" v-for="tag in filteredList()" :key="tag">
+    <input type="text" v-model="input" placeholder="Filter" />
+    <button @click="filter">FILTRAR!</button>
+    <!-- <div class="item fruit" v-for="tag in filteredList()" :key="tag">
       <p>{{ tag }}</p>
     </div>
     <div class="item error" v-if="input && !filteredList().length">
@@ -11,13 +12,22 @@
     </div>
     <button @click="searchTags">Click me!</button>
     <h1 v-for="task in taskStore.tasks" :key="task.id">{{ task.tag_array }}</h1> -->
+    
     <h1 class="tasksTitle">Tasks</h1>
     <div class="taskItemContainer">
       <TaskItem
         @deleteTask="deleteTask"
         @toogleTask="toogleTask"
         @getTasks="getTasks"
-        v-for="task in taskStore.tasks"
+        v-for="task in taskIncompleted"
+        :key="task.id"
+        :task="task"
+      />
+      <TaskItem
+        @deleteTask="deleteTask"
+        @toogleTask="toogleTask"
+        @getTasks="getTasks"
+        v-for="task in taskCheck"
         :key="task.id"
         :task="task"
       />
@@ -38,11 +48,18 @@ const taskStore = useTaskStore();
 console.log(taskStore);
 
 // Variable para guardar las tareas de supabase
-const tasks = reactive([]);
+const tasks = ref([]);
+const taskCheck = ref([]);
+const taskIncompleted = ref([]);
+const taskFilter = ref([]);
+const input=ref("")
 
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
+  taskCheck.value = tasks.value.filter(task => task.is_complete)
+  taskIncompleted.value = tasks.value.filter(task => !task.is_complete)
+  console.log('getTsaks!!!!!')
 };
 getTasks();
 
@@ -52,7 +69,8 @@ const deleteTask = async () => {
 deleteTask();
 
 const toogleTask = async () => {
-  tasks.value = await taskStore.fetchTasks();
+  //tasks.value = await taskStore.fetchTasks();
+  getTasks();
 };
 toogleTask();
 
@@ -62,22 +80,15 @@ const searchTags = () => {
   console.log("clickado");
 };
 
-// let input = ref("");
-// const frutas = reactive(["platano", "manzana"]);
-
-// const filteredList = (input) => {
-//   console.log(taskStore.tasks[1].tag_array[0]); 
-
-//      for (const task in taskStore) {
-//        console.log(taskStore.tasks);
-//        task.filter((tag) =>
-//          tag.lowerCase().includes(input.value.toLowerCase()))
-//      }
-//      return filteredList;  
-//    return frutas.filter((tag) =>
-//      tag.toLowerCase().includes(input.value.toLowerCase())
-//    );
-// };
+const filter = () => {
+  if (input.value !== '') {
+    taskFilter.value =tasks.value.filter(task=>task.tag_array.includes(input.value));
+    taskCheck.value = taskFilter.value.filter(task => task.is_complete)
+    taskIncompleted.value = taskFilter.value.filter(task => !task.is_complete)
+  } else {
+    getTasks();
+  }
+};
 </script>
 
 <style></style>

@@ -631,7 +631,7 @@ h3 {
   transition: all 0.2s ease-in-out;
 }
 .buttonc:hover {
-  background-color: rgb(238, 167, 75);
+  background-color: rgb(216, 166, 101);
   color: #000;
 }
 .operator {
@@ -639,7 +639,7 @@ h3 {
   color: #000;
 }
 .operator:hover {
-  background-color: rgb(255, 209, 148);
+  background-color: rgb(212, 128, 17);
 }
 .MyId:hover {
   cursor: pointer;
@@ -724,20 +724,29 @@ h3 {
   .addNewTask-title{
     font-size: 3.5em;
   }
+  .newTask-container{
+    width: 25%;
+  }
   .newTask{
     width: 210%;
+    outline: #f4a261 1px solid;
   }
   .tag-input{
     width: 210%;
+    outline: #f4a261 1px solid;
   }
   .button-addNewTask-container{
     width: 210%;
   }
+  .button-addNewTask{
+    outline: #f4a261 1px solid;
+  }
   /* TASKS */
   .taskItemContainer{
     display: grid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat( 1fr);
+    grid-auto-rows: 60%;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     height: 350px;
@@ -757,7 +766,7 @@ h3 {
   /* PROFILE */
   .card{
     width: 700px;
-    height: 700px;
+    margin-bottom: 40px;
   }
   .card_background_img{
     height: 270px;
@@ -791,20 +800,26 @@ h3 {
   }
   /* CALCULATOR */
   .buttonsc{
-    width: min(891px, 70%);
-    height: 500px;
+    width: 90%;
+    height: 30vw;
   }
   .buttonc{
-    height: 85px;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
   }
   .output{
-    width: min(891px, 70%);
-    height: 90px;
+    width: 90%;
   }
   .outputCalc{
     height: 100%;
   }
-
+  .number{
+    width: 100%;
+    height: 100%;
+  }
   
 
 }

@@ -10,7 +10,7 @@
       :key="n"
       :class="{ operator: ['C', '*', '/', '-', '+', '%', '='].includes(n) }"
     >
-      <div @click="action(n)">
+      <div @click="action(n)" class="number">
         {{ n }}
       </div>
     </div>

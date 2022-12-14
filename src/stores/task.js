@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { reactive } from "vue";
 import { supabase } from "../supabase";
 import { useUserStore } from "./user";
 
