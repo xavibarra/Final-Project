@@ -1,25 +1,5 @@
 <template>
   <Nav/>
-  <!-- <h1>Name: {{username}}</h1>
-  <img class="avatar"
-    :src="
-      avatar_url
-        ? avatar_url
-        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-      "
-    alt="Profile picture"
-  /> -->
-  <!-- <div v-show="editPerfil">
-    <label for="name">Nombre</label>
-    <input type="text" v-model="username" />
-    <br>
-    <label for="avatar">Avatar</label>
-    <input type="text" v-model="avatar_url" />
-    <button @click="changePerfil">Save</button>
-  </div>
-  <button @click="changeEditPerfil">Edit</button> -->
-
-
   <div class="profile">
     <div class="card">
         <div class="card_background_img"></div>
@@ -51,11 +31,11 @@
         </div>
         <div class="card_count">
             <div class="count">
-                <div class="fans">
+                <div class="pending">
                     <h3>00</h3>
                     <p>pending tasks</p>
                 </div>
-                <div class="following">
+                <div class="done">
                     <h3>00</h3>
                     <p>Tasks done</p>
                 </div>

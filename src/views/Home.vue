@@ -12,14 +12,16 @@
     <button @click="searchTags">Click me!</button>
     <h1 v-for="task in taskStore.tasks" :key="task.id">{{ task.tag_array }}</h1> -->
     <h1 class="tasksTitle">Tasks</h1>
-    <TaskItem
-      @deleteTask="deleteTask"
-      @toogleTask="toogleTask"
-      @getTasks="getTasks"
-      v-for="task in taskStore.tasks"
-      :key="task.id"
-      :task="task"
-    />
+    <div class="taskItemContainer">
+      <TaskItem
+        @deleteTask="deleteTask"
+        @toogleTask="toogleTask"
+        @getTasks="getTasks"
+        v-for="task in taskStore.tasks"
+        :key="task.id"
+        :task="task"
+      />
+    </div>
   </div>
 </template>
 
@@ -30,6 +32,7 @@ import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+
 
 const taskStore = useTaskStore();
 console.log(taskStore);

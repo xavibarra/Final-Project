@@ -5,7 +5,7 @@
     </button>
     <p>Start organizing your tasks now!</p>
   </div>
-  <div id="newTask">
+  <div id="newTask" >
     <div class="addNewTask">
       <h1 class="addNewTask-title">Add a new Task</h1>
       <div v-if="showErrorMessage">
@@ -28,12 +28,9 @@
             v-model="description"
           />
         </div>
+
         <!-- IMPUT TAGS -->
         <div class="tag-input">
-          <div v-for="(tag, index) in tags" :key="tag" class="tag-input__tag">
-            <span @click='removeTag(index)'>x</span>
-            {{ tag }}
-          </div>
           <input
             type="text"
             placeholder="Enter a Tag"
@@ -44,6 +41,13 @@
             @keydown.delete='removeLastTag'
           />
         </div>
+        <div class="tag-input__tag-container">
+          <div v-for="(tag, index) in tags" :key="tag" class="tag-input__tag">
+              <span @click='removeTag(index)'>x</span>
+              {{ tag }}
+          </div>
+        </div>
+
         <!-- FINAL IMPUT TAGS -->
         <div class="button-addNewTask-container">
           <button class="button-addNewTask" @click="addTask">Add</button>
@@ -105,35 +109,32 @@ const addTask = async () => {
     emit("emitTask", tags);
     name.value = "";
     description.value = "";
-    // tags.value = "";
-    //console.log(tags);
-      for (let i = 0; i <= tags.length; i++) {
-        tags.shift(tags);
-    }
+    
+    // console.log(tags);
+       for (let i = 0; i < tags.length; i++) {
+         tags.splice(tags);
+     }
     
   }
 };
 
 const mostrar = () => {
-  FbotonOn();
+  const uno = document.getElementById("botonOn");
   const x = document.getElementById("newTask");
   if (x.style.display === "block") {
     x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-};
-const FbotonOn = () => {
-  const uno = document.getElementById("botonOn");
-  const dos = document.query;
-  if (uno.innerHTML == "Add a new task") {
-    uno.innerHTML = "Close";
-    uno.style.background = "#BF5D0D";
-  } else {
     uno.innerHTML = "Add a new task";
     uno.style.background = "#F4A261";
+  } else {
+    x.style.display = "block";
+    uno.innerHTML = "Close";
+    uno.style.background = "#BF5D0D";
+    
   }
 };
+
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

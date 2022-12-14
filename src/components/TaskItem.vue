@@ -1,78 +1,79 @@
 <template>
-<div :class="clase">
-        <div class="divCheckbox">
-            <input type="checkbox" v-model="task.is_complete" @click="toogleTask"
-            />
+  <div :class="task.is_complete ? `containerCheck` : `container`">
+    <div class="divCheckbox">
+      <input type="checkbox" v-model="task.is_complete" @click="toogleTask" />
+    </div>
+    <div class="task-text">
+      <h3>{{ task.title }}</h3>
+      <div action="#" v-show="!editTask" class="saveChange">
+        <div class="editText">
+          <input class="editText-input" type="text" v-model="name" />
         </div>
-        <div class="task-text">
-            <h3>{{task.title}}</h3>
-            <div action="#" v-show="!editTask" class="saveChange">
-                <div class="editText">
-                    <input class="editText-input" type="text" v-model="name">
-                </div>
-            </div>
-            <p>{{task.description}}</p>
-            <div class="tagsContainer">
-                <p class="tags" v-for="tag in task.tag_array" :key="tag">{{tag}}</p>
-            </div>
-            <div action="#" v-show="!editTask" class="saveChange">
-                <div class="editText editText-description">
-                    <input class="editText-input" type="text" v-model="description" placeholder="Description">
-                </div>
-                <div class="div-update">
-                    <button @click="updateTask" class="buttonUpdate">Save changes</button>
-                </div>
-            </div>
+      </div>
+      <p>{{ task.description }}</p>
+      <div class="tagsContainer">
+        <p :class="task.is_complete ? `tagsCheck` : `tags`" v-for="tag in task.tag_array" :key="tag">{{ tag }}</p>
+      </div>
+      <div action="#" v-show="!editTask" class="saveChange">
+        <div class="editText editText-description">
+          <input
+            class="editText-input"
+            type="text"
+            v-model="description"
+            placeholder="Description"
+          />
         </div>
-        <div class="task-buttons">
-            <button class="iconTask background-delate" @click="deleteTask"><img class="iconTaskImg" src="../../img/eliminar.png" alt=""></button>
-            <button class="iconTask background-edit" @click="editTask1"><img class="iconTaskImg" src="../../img/editar.png" alt=""></button>
+        <div class="div-update">
+          <button @click="updateTask" class="buttonUpdate">Save changes</button>
         </div>
-</div>
+      </div>
+    </div>
+    <div class="task-buttons">
+      <button class="iconTask background-delate" @click="deleteTask">
+        <img class="iconTaskImg" src="../../img/eliminar.png" alt="" />
+      </button>
+      <button class="iconTask background-edit" @click="editTask1">
+        <img class="iconTaskImg" src="../../img/editar.png" alt="" />
+      </button>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useTaskStore } from '../stores/task';
-import { supabase } from '../supabase';
+import { ref } from "vue";
+import { useTaskStore } from "../stores/task";
+import { supabase } from "../supabase";
 
 const name = ref(props.task.title);
 const description = ref(props.task.description);
-const clase=ref()
+// const clase=ref("container")
 const taskStore = useTaskStore();
 
 const editTask1 = () => {
-    editTask.value = !editTask.value
-}
+  editTask.value = !editTask.value;
+};
 const props = defineProps({
-    task: Object,
+  task: Object,
 });
-// Función para borrar la tarea a través de la store. 
+// Función para borrar la tarea a través de la store.
 const emit = defineEmits(["deleteTask", "toogleTask", "getTasks"]);
 
 const editTask = ref(true);
 const updateTask = async () => {
-    editTask1()
-    await taskStore.refreshTask(name.value, description.value, props.task.id);
-    emit("getTasks")
+  editTask1();
+  await taskStore.refreshTask(name.value, description.value, props.task.id);
+  emit("getTasks");
 };
 
-const deleteTask = async() => {
-    await taskStore.deleteTask(props.task.id);
-    emit("deleteTask")
+const deleteTask = async () => {
+  await taskStore.deleteTask(props.task.id);
+  emit("deleteTask");
 };
-const change = () => {
-    clase.value= props.task.is_complete? "containerCheck" : "container"
-}
-change()
+
 const toogleTask = async () => {
-    change();
-    await taskStore.toogleTask(props.task.id, props.task.is_complete);
-    emit("toogleTask")
+  await taskStore.toogleTask(props.task.id, props.task.is_complete);
+  emit("toogleTask");
 };
-
-
-
 </script>
 <style></style>
 
