@@ -69,6 +69,7 @@ h3 {
 .logoutImage {
   width: 30px;
   height: 30px;
+  margin-top: 4px;
 }
 .logout-button {
   all: unset;
@@ -304,7 +305,30 @@ h3 {
   background-color: #bf5d0d;
   color: white;
 }
-
+/* TASKS FILTRE */
+.filtreContain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filtreDiv{
+  margin: 15px;
+  background-color: white;
+  height: 25px;
+  width: 50%;
+  border-radius: 20px;
+  border: none;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+}
+.filtreInput{
+  all: unset;
+  width: 90%;
+}
+.tasksdone-pendind{
+  display: none;
+}
 /* TASKS */
 .tasksTitle {
   text-align: center;
@@ -751,6 +775,15 @@ h3 {
     grid-row-gap: 0px;
     height: 350px;
   }
+  .container{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .containerCheck{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    /* grid-row-start: 1; */
+  }
   .task-buttons{
     justify-content: space-around;
   }
@@ -788,9 +821,11 @@ h3 {
   }
   .pending h3{
     font-size: 3rem;
+    text-align: center;
   }
   .done h3{
     font-size: 3rem;
+    text-align: center;
   }
   .done p{
     font-size: 1.4rem;

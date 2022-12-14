@@ -2,27 +2,30 @@
   <div class="wrapper">
     <Nav />
     <NewTask @emitTask="getTasks" />
-    <input type="text" v-model="input" placeholder="Filter" />
-    <button @click="filter">FILTRAR!</button>
-    <!-- <div class="item fruit" v-for="tag in filteredList()" :key="tag">
-      <p>{{ tag }}</p>
-    </div>
-    <div class="item error" v-if="input && !filteredList().length">
-      <p>No results found!</p>
-    </div>
-    <button @click="searchTags">Click me!</button>
-    <h1 v-for="task in taskStore.tasks" :key="task.id">{{ task.tag_array }}</h1> -->
-    
+       
     <h1 class="tasksTitle">Tasks</h1>
+    <div class="filtreContain">
+      <div class="filtreDiv">
+        <input type="text" v-model="input" placeholder="Filter" class="filtreInput" />
+      </div>
+      <button @click="filter">FILTRAR!</button> 
+    </div>
+    <div class="tasksdone-pendind">
+      <h2>Tasks done</h2>
+      <h2>Pending tasks</h2>
+    </div>
     <div class="taskItemContainer">
-      <TaskItem
+      <div>
+        <TaskItem
         @deleteTask="deleteTask"
         @toogleTask="toogleTask"
         @getTasks="getTasks"
         v-for="task in taskIncompleted"
         :key="task.id"
         :task="task"
-      />
+        />
+    </div>
+    <div>
       <TaskItem
         @deleteTask="deleteTask"
         @toogleTask="toogleTask"
@@ -31,6 +34,8 @@
         :key="task.id"
         :task="task"
       />
+    </div>
+      
     </div>
   </div>
 </template>
@@ -64,7 +69,8 @@ const getTasks = async () => {
 getTasks();
 
 const deleteTask = async () => {
-  tasks.value = await taskStore.fetchTasks();
+  // tasks.value = await taskStore.fetchTasks();
+  getTasks();
 };
 deleteTask();
 

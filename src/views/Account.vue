@@ -32,11 +32,11 @@
         <div class="card_count">
             <div class="count">
                 <div class="pending">
-                    <h3>00</h3>
+                    <h3>{{taskIncompleted}}</h3>
                     <p>pending tasks</p>
                 </div>
                 <div class="done">
-                    <h3>00</h3>
+                    <h3>{{taskCheck}}</h3>
                     <p>Tasks done</p>
                 </div>
             </div>
@@ -51,8 +51,23 @@
 import { onMounted, reactive, ref, toRefs } from "vue";
 import Nav from "../components/Nav.vue";
 import { useUserStore } from "../stores/user.js"
+import { useTaskStore } from "../stores/task";
 
 const userStore = useUserStore();
+const taskCheck = ref(0);
+const taskIncompleted = ref(0);
+const tasks = ref("");
+const taskStore = useTaskStore();
+
+const getTasks = async () => {
+  tasks.value = await taskStore.fetchTasks();
+
+  taskCheck.value = tasks.value.filter(task => task.is_complete).length
+
+  taskIncompleted.value = tasks.value.filter(task => !task.is_complete).length
+  console.log('getTsaks!!!!!')
+};
+getTasks();
 
 // Variable para guardar el perfil de supabase
 const profile = ref({
