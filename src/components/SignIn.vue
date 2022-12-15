@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="part3-sign">
-      <img class="mockup" src="../../img/realistic_laptop_with_smartphone.jpg" alt="">
+      <img class="mockup" src="../../img/Post de Instagram mockup Rebajas web y app verde.gif" alt="using app">
     </div>
     <div class="part4-sign">  
       <div class="frequently-questions">

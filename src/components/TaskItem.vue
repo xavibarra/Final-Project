@@ -1,7 +1,7 @@
 <template>
   <div :class="task.is_complete ? `containerCheck` : `container`">
     <div class="divCheckbox">
-      <input type="checkbox" v-model="task.is_complete" @click="toogleTask" />
+      <button @click="toogleTask" :class="task.is_complete ? `checkButton` : `checkNoButton`"></button>
     </div>
     <div class="task-text">
       <h3>{{ task.title }}</h3>

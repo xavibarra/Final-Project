@@ -129,7 +129,9 @@ h3 {
 /* title sign */
 .title-sign {
   font-size: 3.5rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #f4a261;
+  -webkit-text-stroke: 0.5px black;
 }
 #signIn {
   display: none;
@@ -278,11 +280,11 @@ h3 {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
-  justify-content: center;
 }
 .addNewTask-input {
   all: unset;
   width: 90%;
+  margin-left: 10px;
 }
 .button-addNewTask-container {
   width: 130%;
@@ -343,6 +345,28 @@ h3 {
   display: none;
 }
 /* TASKS */
+.checkNoButton{
+  all: unset;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url(../../img/tick.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+
+}
+.checkButton{
+  all: unset;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url(../../img/icons8-comprobado-40.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 3px green solid;
+}
 .tasksTitle {
   text-align: center;
   color: #f4a261;
@@ -377,6 +401,7 @@ h3 {
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .task-text {
   grid-area: 1 / 2 / 2 / 5;
@@ -384,6 +409,10 @@ h3 {
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
+}
+.task-text h3{
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 .task-buttons {
   display: flex;
@@ -419,7 +448,7 @@ h3 {
   border: none;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   display: flex;
-  justify-content: center;
+
 }
 .tag-input__tag-container{
   width: 225px;
@@ -432,7 +461,7 @@ h3 {
   margin-top: 10px;
   line-height: 30px;
   padding: 0 5px;
-  border-radius: 5px;
+  border-radius: 5px; 
 }
 
 .tag-input__tag > span {
@@ -443,6 +472,7 @@ h3 {
 .tag-input__text {
   all: unset;
   width: 90%;
+  margin-left: 10px;
 }
 
 /* Delate task */
@@ -752,7 +782,8 @@ h3 {
   }
   .part4-sign {
     grid-area: 3 / 1 / 4 / 3;
-    width: 70%;
+    width: 100%;
+
   }
   .img-sign {
     width: 300px;
@@ -818,6 +849,7 @@ h3 {
   }
   .task-text h3{
     margin-bottom: 5px;
+    font-size: 1.8rem;
   }
   .tag-input__tag-container{
     width: 170%;

@@ -28,7 +28,9 @@
           >Calculator</router-link
         >
       </li>
-      <li class="marginlink">jhgfd</li>
+      <li class="marginlink"><router-link class="hamburgerLink" to="/calendar"
+          >Calendar</router-link
+        ></li>
       <li class="marginlink">gfd</li>
     </ul>
   </div>
