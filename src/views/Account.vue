@@ -33,11 +33,11 @@
             <div class="count">
                 <div class="pending">
                     <h3>{{taskIncompleted}}</h3>
-                    <p>pending tasks</p>
+                    <p>To Do</p>
                 </div>
                 <div class="done">
                     <h3>{{taskCheck}}</h3>
-                    <p>Tasks done</p>
+                    <p>Done</p>
                 </div>
             </div>
             <button @click="changeEditPerfil" class="btn">Edit</button>

@@ -11,9 +11,6 @@
         </div>
       </div>
       <p>{{ task.description }}</p>
-      <div class="tagsContainer">
-        <p :class="task.is_complete ? `tagsCheck` : `tags`" v-for="tag in task.tag_array" :key="tag">{{ tag }}</p>
-      </div>
       <div action="#" v-show="!editTask" class="saveChange">
         <div class="editText editText-description">
           <input
@@ -26,6 +23,9 @@
         <div class="div-update">
           <button @click="updateTask" class="buttonUpdate">Save changes</button>
         </div>
+      </div>
+      <div class="tagsContainer">
+        <p :class="task.is_complete ? `tagsCheck` : `tags`" v-for="tag in task.tag_array" :key="tag">{{ tag }}</p>
       </div>
     </div>
     <div class="task-buttons">

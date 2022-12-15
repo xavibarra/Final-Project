@@ -13,7 +13,7 @@ export const useTaskStore = defineStore("tasks", {
         .from("tasks")
         .select("*")
         // .order("is_complete", { ascending: true })
-        // .order("id", { ascending: false });
+        .order("id", { ascending: false });
       
       this.tasks = tasks;
       return this.tasks;

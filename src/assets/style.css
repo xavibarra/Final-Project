@@ -320,13 +320,26 @@ h3 {
   border: none;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  outline: #f4a261 1px solid;
 }
 .filtreInput{
   all: unset;
   width: 90%;
+  margin-left: 10px;
 }
-.tasksdone-pendind{
+.filterImg{
+  width: 20px;
+}
+.filtreButton{
+  all: unset;
+  width: 90px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tasksdone-pending{
   display: none;
 }
 /* TASKS */
@@ -392,6 +405,7 @@ h3 {
 }
 .tagsCheck{
   margin-right: 5px;
+  margin-top: 5px;
   padding: 5px;
   border-radius: 5px;
   background-color: rgba(0, 128, 0, 0.264);;
@@ -549,6 +563,12 @@ h3 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 28px;
+}
+.pending h3{
+  text-align: center;
+}
+.done h3{
+  text-align: center;
 }
 
 .btn {
@@ -766,6 +786,12 @@ h3 {
     outline: #f4a261 1px solid;
   }
   /* TASKS */
+  .tasksdone-pending{
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+    color: #f4a261;
+  }
   .taskItemContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

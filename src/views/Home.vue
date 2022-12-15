@@ -6,13 +6,13 @@
     <h1 class="tasksTitle">Tasks</h1>
     <div class="filtreContain">
       <div class="filtreDiv">
-        <input type="text" v-model="input" placeholder="Filter" class="filtreInput" />
+        <input type="text" v-model="input" placeholder="Filter by tag" class="filtreInput" />
+        <button @click="filter" class="filtreButton"><img class="filterImg" src="../../img/filter.png" alt="filtre"></button>
       </div>
-      <button @click="filter">FILTRAR!</button> 
     </div>
-    <div class="tasksdone-pendind">
-      <h2>Tasks done</h2>
-      <h2>Pending tasks</h2>
+    <div class="tasksdone-pending">
+      <h2>To Do</h2>
+      <h2>Done</h2>
     </div>
     <div class="taskItemContainer">
       <div>
