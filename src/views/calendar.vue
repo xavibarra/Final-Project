@@ -1,6 +1,8 @@
 <template>
   <Nav />
-  <div>{{ dia }}, {{ mes }} {{date.getDate()}}, {{date.getFullYear()}}</div>
+  <div>
+    {{ dia }}, {{ mes }} {{date.getDate()}}, {{date.getFullYear()}}
+    </div>
   <div>
     {{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}
   </div>
