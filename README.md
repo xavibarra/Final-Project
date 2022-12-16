@@ -39,3 +39,47 @@ __El objetivo__ de este proyecto es poner en practica los conocimientos de Vue.j
 * HTML página completa Sing up / Sing In
 * CSS página completa Sing up/ Sing In
 
+### 07 Diciembre:
+
+* Editar tareas
+* HTML home page
+* CSS home page movile
+
+### 08 Diciembre:
+
+* Acabar CSS home page movile
+* Intercalar clases tareas completadas/pendientes
+* Nav
+
+### 09 Diciembre:
+
+* CSS responsive sing up
+* CSS responsive sing in
+* CSS responsive home page
+
+### 12 Diciembre:
+
+* Funcionalidades perfil
+* Enviar información de tascas a perfil
+* CSS perfil movile and responsive
+
+### 13 Diciembre:
+
+* Menú hamburguesa nav
+* Calculadora
+* Nav responsive
+
+### 14 Diciembre:
+
+* Pequeños arreglos de estilo
+* Añadir tags a las tareas
+
+### 15 Diciembre:
+
+* Filtrar las tareas por sus tags
+* Reloj
+
+### 16 Diciembre:
+
+* Presentación
+
