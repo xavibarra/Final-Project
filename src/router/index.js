@@ -6,6 +6,7 @@ import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
 import calculator from "../views/calculator.vue";
 import calendar from "../views/calendar.vue";
+
 const routes = [
   {
     path: "/auth",
@@ -19,6 +20,7 @@ const routes = [
   { path: "/account", component: Account },
   { path: "/calculator", component: calculator },
   { path: "/calendar", component: calendar },
+
 ];
 
 const router = createRouter({

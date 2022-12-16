@@ -1,5 +1,5 @@
 <template>
-  <div :class="task.is_complete ? `containerCheck` : `container`">
+  <div :class="task.is_complete ? `containerCheck` : `container`" class="x">
     <div class="divCheckbox">
       <button @click="toogleTask" :class="task.is_complete ? `checkButton` : `checkNoButton`"></button>
     </div>

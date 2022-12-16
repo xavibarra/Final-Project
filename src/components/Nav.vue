@@ -1,11 +1,32 @@
 <template>
   <nav class="navbar">
-    <div>
+    <div class="divButtonHamb">
       <button @click="hamburgerMenuChange" class="hamburgerButton">☰</button>
     </div>
     <div class="navbar-logo">
       <h1>ToDo</h1>
       <img class="logo-sign" src="../../img/logo.png" alt="logo ToDo" />
+    </div>
+    <div class="navbar-links" >
+      <ul>
+        <li class="marginlink">
+          <router-link class="hamburgerLink" to="/"> Home </router-link>
+        </li>
+        <li class="marginlink">
+          <router-link class="hamburgerLink" to="/account"
+            >Your Account</router-link
+          >
+        </li>
+        <li class="marginlink">
+          <router-link class="hamburgerLink" to="/calculator"
+            >Calculator</router-link
+          >
+        </li>
+        <li class="marginlink"><router-link class="hamburgerLink" to="/calendar"
+            >Clock</router-link
+          >
+        </li>
+      </ul>
     </div>
     <div class="singOut">
       <button @click="signOut" class="logout-button">
@@ -29,9 +50,9 @@
         >
       </li>
       <li class="marginlink"><router-link class="hamburgerLink" to="/calendar"
-          >Calendar</router-link
-        ></li>
-      <li class="marginlink">gfd</li>
+          >Clock</router-link
+        >
+      </li>
     </ul>
   </div>
 </template>

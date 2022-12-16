@@ -1,12 +1,17 @@
 <template>
-  <Nav />
-  <div>
-    {{ dia }}, {{ mes }} {{date.getDate()}}, {{date.getFullYear()}}
+    <Nav />
+    <div class="">  
+        <div class="date">
+            <p>{{ dia }}, {{ mes }} {{date.getDate()}}, {{date.getFullYear()}}</p>
+        </div>
+        <div class="clock">
+            <p>{{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}</p>
+        </div>
     </div>
-  <div>
-    {{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}
-  </div>
-
+    <div class="progress">
+        <p>Work in progress... </p>
+        <img src="../../img/workProgress.png" alt="Work in progress">
+    </div>
 </template>
 
 <script setup>
